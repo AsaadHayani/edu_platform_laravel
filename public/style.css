@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;700&family=Readex+Pro:wght@300&family=Roboto:wght@400;700&display=swap');
+:root {
+  --main-color: #023059;
+  --color-shadow: #6e6e6e;
+}
+* {
+  font-family: 'Roboto', 'Noto Kufi Arabic', 'sans-serif';
+  letter-spacing: .8px;
+}
+.btn, .card, img {
+  transition: all 0.5s ease-in-out;
+}
+input.form-check-input, label, .label {
+  cursor: pointer;
+}
+img, video {
+  object-fit: cover;
+}
+.tutorial .card, .course {
+  border: 1px solid;
+}
+.tutorial .card:hover {
+  transform: translate(0px, -10px);
+}
+.card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  height: 0%;
+  width: 100%;
+  transition: 0.7s;
+}
+.tutorial .card:hover::before {
+  height: 100%;
+}
+.tutorial .card-body * {
+  margin: 0;
+}
+.tutorial .card-text {
+  font-size: 15px;
+}
+.btn:not(.tutorial .btn-primary, nav .btn-success, #home .btn, .btn-link) {
+  box-shadow: 0 0 14px 2px var(--color-shadow);
+}
+.btn:hover:not(.tutorial .btn-primary) {
+  transform: scale(1.1);
+}
+img:hover {
+  transform: scale(.9);
+}
+.is_done {
+  background-color: #ddd;
+  border: 1px solid;
+  padding-left: 5px;
+  padding-right: 5px;
+  cursor: pointer;
+}
+.done {
+  color: #00bc00;
+}
