@@ -10,18 +10,12 @@ use Illuminate\Support\Facades\File;
 
 class CourseController extends Controller
 {
-  /**
-   * Display a listing of the resource.
-   */
   public function index()
   {
     $courses = Course::latest("updated_at", "desc")->paginate(3);
     return view('courses.index')->with('courses', $courses);
   }
 
-  /**
-   * Show the form for creating a new resource.
-   */
   public function create(Course $course)
   {
     $this->authorize('create', $course);
@@ -32,9 +26,6 @@ class CourseController extends Controller
     ])->with('users', $users);
   }
 
-  /**
-   * Store a newly created resource in storage.
-   */
   public function store(Request $request)
   {
     if ($request->hasFile('image')) {
@@ -42,7 +33,6 @@ class CourseController extends Controller
         'name' => 'required|min:2|max:20',
         'desc' => 'required|min:5|max:50',
         'image' => 'required|mimes:jpg,jpeg,png|max:5048',
-        // 'less' => 'required',
         'user' => 'required|array',
       ]);
       $file = $request->file('image');
@@ -53,8 +43,6 @@ class CourseController extends Controller
         'name' => $validated['name'],
         'desc' => $validated['desc'],
         'image' => $imageName,
-        // 'less' => $validated['less']
-        // 'user_id' => auth()->user()->id,
       ]);
       if (isset($validated['less'])) {
         $course->tutorials($validated['less']);
@@ -66,9 +54,6 @@ class CourseController extends Controller
     return redirect(route('courses.index'))->with('message', 'Added Successfully');
   }
 
-  /**
-   * Display the specified resource.
-   */
   public function show(Course $course)
   {
     $this->authorize('view', $course);
@@ -79,9 +64,6 @@ class CourseController extends Controller
     ]);
   }
 
-  /**
-   * Show the form for editing the specified resource.
-   */
   public function edit(Course $course)
   {
     $this->authorize('update', $course);
@@ -92,16 +74,13 @@ class CourseController extends Controller
     ]);
   }
 
-  /**
-   * Update the specified resource in storage.
-   */
   public function update(Request $request, Course $course)
   {
     $validated = $request->validate([
       'name' => 'min:2|max:20',
       'desc' => 'min:5|max:50',
       'image' => 'mimes:jpg,jpeg,png|max:5048',
-      'user' => 'required|array',
+      'users' => 'required|array',
     ]);
     if ($request->hasFile('image')) {
       $myImage = public_path('images') . '/' . $course->image;
@@ -116,23 +95,18 @@ class CourseController extends Controller
         'name' => $validated['name'],
         'desc' => $validated['desc'],
         'image' => $imageName,
-        // 'user_id' => auth()->user()->id,
       ]);
     }
     $course->update([
       'name' => $validated['name'],
       'desc' => $validated['desc'],
-      // 'user_id' => auth()->user()->id,
     ]);
-    if (isset($validated['user'])) {
-      $course->users()->syncWithoutDetaching($validated['user']);
+    if (isset($validated['users'])) {
+      $course->users()->syncWithoutDetaching($validated['users']);
     }
     return redirect(route('courses.index'))->with('message', 'Updated Successfully');
   }
 
-  /**
-   * Remove the specified resource from storage.
-   */
   public function destroy(Course $course)
   {
     $this->authorize('delete', $course);
@@ -146,12 +120,6 @@ class CourseController extends Controller
 
   public function course_user(Course $course)
   {
-    // $this->authorize('delete', $course);
-    // $myImage = public_path('images') . '/' . $course->image;
-    // if (File::exists($myImage)) {
-    //   File::delete($myImage);
-    // }
-    // $course->delete();
     return redirect(route('courses.index'))->with('message', "Update Users to \"$course->name\" Successfully");
   }
 }

@@ -20,7 +20,7 @@ class CourseResource extends JsonResource
       'name' => $this->name,
       'desc' => $this->desc,
       'image' => $this->image,
-      // 'user_id' => auth()->user()
+      'users' => $this->users
     ];
   }
 }

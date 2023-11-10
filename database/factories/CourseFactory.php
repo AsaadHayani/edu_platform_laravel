@@ -18,7 +18,8 @@ class CourseFactory extends Factory
   {
     return [
       'name' => fake()->text(8),
-      'desc' => fake()->text(30)
+      'desc' => fake()->text(30),
+      'image'=>fake()->imageUrl()
     ];
   }
 }

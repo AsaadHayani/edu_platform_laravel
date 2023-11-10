@@ -20,7 +20,7 @@ class TutorialResource extends JsonResource
       'title' => $this->title,
       'content' => $this->content,
       'image' => $this->image,
-      // 'user_id' => auth()->user()
+      'course' => $this->course,
     ];
   }
 }

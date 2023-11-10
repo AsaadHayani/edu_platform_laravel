@@ -31,22 +31,26 @@
         <img src="/images/{{ $course->image }}" height="100" class="mb-3 img-responsive img" />
         <div class="mb-3">
             <label>{{ __('course.user') }}</label>
-            <div class="d-flex justify-content-around align-items-center">
-                {{-- @foreach ($users as $user)
-                <label for="{{ $user->id }}" class="text-capitalize">{{ $user->name }}</label>
-                <input type="checkbox" name="user" class="form-check-input" id="{{ $user->id }}">
-                @endforeach --}}
+            <div class="row">
+                @foreach ($users as $user)
+                    <div class="col border border-black d-flex justify-content-between">
+                        <label for="{{ $user->id }}" class="text-capitalize">{{ $user->name }}</label>
+                        <input type="checkbox" name="users[]" class="form-check-input border-black"
+                            value="{{ $user->id }}" id="{{ $user->id }}"
+                            @foreach ($course->users as $id){{ $id->id == $user->id ? 'checked' : '' }} @endforeach>
+                    </div>
+                @endforeach
+            </div>
 
-                <select name="user[]" multiple class="form-select">
+            {{-- <select name="user[]" multiple class="form-select">
                     @foreach ($users as $user)
                         <option value="{{ $user->id }}" class="text-capitalize">{{ $user->name }}</option>
                     @endforeach
-                </select>
+                </select> --}}
 
-                @error('user')
-                    <p class="text-danger">{{ $message }}</p>
-                @enderror
-            </div>
+            @error('user')
+                <p class="text-danger">{{ $message }}</p>
+            @enderror
         </div>
         <div class="row mb-3">
             <button class="btn btn-warning">{{ __('general.edit') }}</button>

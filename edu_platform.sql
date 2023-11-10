@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 12, 2023 at 11:31 AM
+-- Generation Time: Nov 10, 2023 at 07:53 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -42,7 +42,7 @@ CREATE TABLE `courses` (
 
 INSERT INTO `courses` (`id`, `name`, `desc`, `image`, `created_at`, `updated_at`) VALUES
 (1, 'Course 1', 'Description 1', '1.jpg', '2023-09-09 06:46:55', '2023-09-09 06:46:55'),
-(2, 'ttttttt 2', 'Description 2', '1.jpg', '2023-09-09 06:46:55', '2023-09-10 15:45:22'),
+(2, 'Course 2', 'Description 2', '1.jpg', '2023-09-09 06:46:55', '2023-11-08 15:33:22'),
 (3, 'Course 3', 'Description 3', '1.jpg', '2023-09-09 06:46:55', '2023-09-09 06:46:55'),
 (4, 'Eos.', 'In officia qui nam molestiae.', '1.jpg', '2023-09-09 06:46:55', '2023-09-09 06:46:55'),
 (5, 'Minus.', 'Voluptas aut quo quia id.', '1.jpg', '2023-09-09 06:46:55', '2023-09-09 06:46:55'),
@@ -199,6 +199,13 @@ CREATE TABLE `resumes` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `resumes`
+--
+
+INSERT INTO `resumes` (`id`, `job_type`, `education`, `skills`, `resume`, `user_id`, `created_at`, `updated_at`) VALUES
+(5, 'Developer', 'Univercity Idleb', 90, '1699640282.pdf', 2, '2023-11-10 15:18:02', '2023-11-10 15:18:02');
+
 -- --------------------------------------------------------
 
 --
@@ -222,8 +229,8 @@ CREATE TABLE `tutorials` (
 --
 
 INSERT INTO `tutorials` (`id`, `title`, `content`, `video`, `is_done`, `user_id`, `course_id`, `created_at`, `updated_at`) VALUES
-(1, 'Lesson 1', 'Content 1', '1.mp4', 1, 1, 1, '2023-09-09 06:46:55', '2023-09-10 15:39:20'),
-(2, 'Lesson 2', 'Content 2', NULL, 1, 1, 2, '2023-09-09 06:46:55', '2023-09-10 15:39:04'),
+(1, 'Lesson 1', 'Content 1', '1.mp4', 0, 1, 1, '2023-09-09 06:46:55', '2023-11-10 08:17:41'),
+(2, 'Lesson 2', 'Content 2', NULL, 0, 1, 2, '2023-09-09 06:46:55', '2023-11-10 08:17:37'),
 (3, 'Lesson 3', 'Content 3', '1.mp4', 1, 1, 3, '2023-09-09 06:46:55', '2023-09-10 15:38:59'),
 (4, 'Facilis.', 'Velit incidunt hic ut.', '1.mp4', 0, 1, 4, '2023-09-09 06:46:55', '2023-09-09 06:46:55'),
 (5, 'Eaque.', 'Est odit ipsum quibusdam quo.', '1.mp4', 0, 1, 5, '2023-09-09 06:46:55', '2023-09-09 06:46:55'),
@@ -259,13 +266,13 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `role`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'asaad', 'asaad@gmail.com', '2023-09-09 06:46:55', '$2y$10$iGI19GFFp/PK809egRcgoOcsyz3Yvp.Xy0mOz7a6hAt1w729IAp3m', 1, 'ZbGnATPVrB', '2023-09-09 06:46:55', '2023-09-09 06:46:55'),
-(2, 'Nam quo.', 'schulist.trycia@example.com', '2023-09-09 06:46:55', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 0, 'avlSLraT3g', '2023-09-09 06:46:55', '2023-09-09 06:46:55'),
-(3, 'Rerum.', 'hansen.vicente@example.com', '2023-09-09 06:46:55', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 0, 'q04BOhZNCQ', '2023-09-09 06:46:55', '2023-09-09 06:46:55'),
-(4, 'Autem.', 'beatty.name@example.com', '2023-09-09 06:46:55', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 0, 'l5RZBDu4n2', '2023-09-09 06:46:55', '2023-09-09 06:46:55'),
-(5, 'Officia.', 'leanne17@example.com', '2023-09-09 06:46:55', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 0, 'KnGXCUwflo', '2023-09-09 06:46:55', '2023-09-09 06:46:55'),
-(6, 'Aut.', 'terry.ervin@example.com', '2023-09-09 06:46:55', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 0, 'Hhta5wWFwb', '2023-09-09 06:46:55', '2023-09-09 06:46:55'),
-(7, 'Admin', 'admin@gmail.com', NULL, '$2y$10$kumBARcAmvQV1euicKPW4O2Cy5sb3z4zNVdyMYPgd2S8410YlpIcq', 2, NULL, '2023-09-10 15:41:52', '2023-09-10 15:41:52');
+(1, 'asaad', 'asaad@gmail.com', '2023-09-09 06:46:55', '$2y$10$iGI19GFFp/PK809egRcgoOcsyz3Yvp.Xy0mOz7a6hAt1w729IAp3m', 2, 'W653z1f4WZEH9o3jsxNNELXDpSvU2wB3kEVVMBMLWYEv2FNdyMfBfzzbvYZ6', '2023-09-09 06:46:55', '2023-09-09 06:46:55'),
+(2, 'Nour', 'nour@example.com', '2023-09-09 06:46:55', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 1, 'avlSLraT3g', '2023-09-09 06:46:55', '2023-09-09 06:46:55'),
+(3, 'Rami', 'rami@example.com', '2023-09-09 06:46:55', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 0, 'q04BOhZNCQ', '2023-09-09 06:46:55', '2023-09-09 06:46:55'),
+(4, 'ahmed', 'ahmed@example.com', '2023-09-09 06:46:55', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 0, 'l5RZBDu4n2', '2023-09-09 06:46:55', '2023-09-09 06:46:55'),
+(5, 'asmaa', 'omar@example.com', '2023-09-09 06:46:55', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 0, 'KnGXCUwflo', '2023-09-09 06:46:55', '2023-09-09 06:46:55'),
+(6, 'salem.', 'salem@example.com', '2023-09-09 06:46:55', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 0, 'Hhta5wWFwb', '2023-09-09 06:46:55', '2023-09-09 06:46:55'),
+(7, 'admin', 'admin@gmail.com', NULL, '$2y$10$kumBARcAmvQV1euicKPW4O2Cy5sb3z4zNVdyMYPgd2S8410YlpIcq', 2, NULL, '2023-09-10 15:41:52', '2023-09-10 15:41:52');
 
 --
 -- Indexes for dumped tables
@@ -348,13 +355,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `course_user`
 --
 ALTER TABLE `course_user`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -378,19 +385,19 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `resumes`
 --
 ALTER TABLE `resumes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tutorials`
 --
 ALTER TABLE `tutorials`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables

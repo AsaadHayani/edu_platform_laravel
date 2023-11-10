@@ -20,7 +20,8 @@ class ResumeResource extends JsonResource
       'job_type' => $this->job_type,
       'education' => $this->education,
       'skills' => $this->skills,
-      'resume' => $this->resume
+      // 'resume' => $this->resume,
+      'user_id' => $this->users,
     ];
   }
 }
