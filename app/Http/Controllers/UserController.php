@@ -138,6 +138,7 @@ class UserController extends Controller
     $user->delete();
     return redirect(route('users.index'))->with('message', 'Deleted Successfully');
   }
+
   public function is_done(User $user)
   {
     if ($user->user_is_done == 1) {

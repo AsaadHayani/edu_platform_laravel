@@ -7,16 +7,22 @@
   font-family: "Roboto", "Noto Kufi Arabic", "sans-serif";
   letter-spacing: 0.8px;
 }
-.btn, .card, img {
-  transition: all 0.5s ease-in-out;
+.btn,
+.card,
+img {
+  transition: all 0.5s ease-in-out !important;
 }
-input.form-check-input, label, .label {
+input.form-check-input,
+label,
+.label {
   cursor: pointer;
 }
-img, video {
+img,
+video {
   object-fit: cover;
 }
-.tutorial .card, .course {
+.tutorial .card,
+.course {
   border: 1px solid;
 }
 .tutorial .card:hover {
