@@ -1,66 +1,156 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🎓 Educational Platform using Laravel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Welcome to the _Educational Platform, a full-featured web application built with [Laravel](https://laravel.com/), **MySQL, **Laravel Sanctum, and \*\*Bootstrap_. This platform provides a flexible learning management system for students, teachers, and administrators.
 
-## About Laravel
+## 🚀 Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### 1. Account Management & Authentication
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Register, login, and logout functionality.
+- Password reset via email.
+- Email verification after registration.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 🔐 Login Page
 
-## Learning Laravel
+![Login](screenshots/login.png)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 2. Roles and Permissions Management
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Multiple user roles:
+  - 👨‍🎓 Student
+  - 👨‍🏫 Teacher
+  - 🧑‍💼 Admin
+- Role-based access control to restrict or grant actions dynamically.
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### 3. Admin Dashboard
 
-### Premium Partners
+- Add, edit, or delete users.
+- Assign roles to users (Student, Teacher, Admin).
+- Link users with specific courses based on their role.
+- Manage courses, trainings, and sessions.
+- Add/edit/delete lectures (title + video or long text).
+- Manage users' CV information: job history, certificates, and education levels.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+---
 
-## Contributing
+### 4. Teacher Dashboard
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Add, update, and remove students from a training.
+- Manage sessions: create, edit, delete.
+- Mark student attendance for each session using checkboxes.
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 5. Student Dashboard
 
-## Security Vulnerabilities
+- View assigned courses and their lectures.
+- Fill in personal information, education, certificates, and job experience through a CV page.
+- Access video lectures or textual content.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+### 6. Responsive Design & Security
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- Fully responsive interface using _Bootstrap_.
+- RTL - LTR support for English & Arabic language.
+- API endpoints secured via _Laravel Sanctum_ with token-based authentication.
+
+---
+
+## 📸 Screenshots
+
+### 📋 Home Page
+
+![Home Page](screenshots/home.png)
+
+### 🎓 Courses Page
+
+![Courses](screenshots/courses.png)
+
+### 🎓 Add Course Page
+
+![Add Course](screenshots/add-course.png)
+
+### 🎓 Lessons Page
+
+![Lessons](screenshots/lessons.png)
+
+### 🎓 Edit Lesson
+
+![Edit Lesson](screenshots/edit-lessone.png)
+
+### 🎓 Users Page
+
+![Users](screenshots/users.png)
+
+### 🎓 CV's Page
+
+![CV'S](screenshots/cvs.png)
+
+---
+
+## ⚙ Installation
+
+1. Clone the repository:
+   bash
+   git clone https://github.com/your-username/your-repo.git
+
+2) Install dependencies:
+   bash
+   composer install
+   npm install && npm run dev
+
+3. Setup the environment:
+   bash
+   cp .env.example .env
+   php artisan key:generate
+
+4) Configure the database:
+   - Create a new MySQL database.
+   - Update .env file with database credentials.
+   - Run migrations and seeders:
+     bash
+     php artisan migrate --seed
+
+5. Start the server:
+   bash
+   php artisan serve
+
+---
+
+## 🔐 API Authentication
+
+This project uses _Laravel Sanctum_ for API authentication.
+
+- To use the protected routes, send your requests with a Bearer Token in the Authorization header.
+- Example:
+
+  Authorization: Bearer YOUR_ACCESS_TOKEN
+
+---
+
+## 🛠 Technologies Used
+
+- Laravel 10.x
+- MySQL
+- Laravel Sanctum (API Authentication)
+- Bootstrap 5 (UI Styling)
+- JavaScript & Blade Templates
+
+---
+
+## 👨‍💻 Developer
+
+- _Name_: [Asaad Hayani]
+- _Email_: [asaad99hayani@gmail.com]
+- _GitHub_: [github.com/AsaadHayani]
+
+---
+
+## 📄 License
+
+This project is open-source and available under the [MIT License](LICENSE).
